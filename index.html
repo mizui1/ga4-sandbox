@@ -17,12 +17,91 @@
         <!-- End Google Tag Manager -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GA4 Debug</title>
+        <title>トップページ | GTM Sandbox</title>
+        <meta name="description" content="GTM/GA4計測テスト用のトップページです。" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=M+PLUS+1+Code:wght@500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
     </head>
-    <body>
+    <body data-page="home">
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WM9JNK3D" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a class="brand" href="index.html">GTM Sandbox</a>
+                <nav class="main-nav" aria-label="メインナビゲーション">
+                    <a href="index.html">Top</a>
+                    <a href="blog-1.html">Blog 1</a>
+                    <a href="blog-2.html">Blog 2</a>
+                    <a href="lp-1.html">LP 1</a>
+                    <a href="lp-2.html">LP 2</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <p>Google Analytics 4のデバッグ用ページです。</p>
+
+            Button: <button id="testButton" onclick="sendTapEvent()">Click me</button>
+
+            <section class="hero">
+                <div class="container hero-inner">
+                    <p class="eyebrow">GA4 + GTM Tracking Playground</p>
+                    <h1>静的サイトで計測導線をまとめて検証</h1>
+                    <p class="hero-copy">Github Pages公開を前提に、ページ遷移・CTAクリック・フォーム送信を確認できる構成です。</p>
+                    <div class="hero-cta-row">
+                        <a class="btn btn-primary js-track-cta" href="contact.html" data-cta-name="home_hero_contact">お問い合わせへ</a>
+                        <a class="btn btn-ghost js-track-cta" href="lp-1.html" data-cta-name="home_hero_lp1">LP1を見る</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>ページ一覧</h2>
+                    <div class="grid cards-3">
+                        <article class="card">
+                            <h3>Blog</h3>
+                            <p>記事ページ2本。スクロールと記事内CTAの計測向け。</p>
+                            <p><a href="blog-1.html">Blog 1</a> / <a href="blog-2.html">Blog 2</a></p>
+                        </article>
+                        <article class="card">
+                            <h3>Landing Page</h3>
+                            <p>訴求デザイン違いのLPを2本用意。CV導線比較に使えます。</p>
+                            <p><a href="lp-1.html">LP 1</a> / <a href="lp-2.html">LP 2</a></p>
+                        </article>
+                        <article class="card">
+                            <h3>Contact Flow</h3>
+                            <p>フォーム送信後にサンクスページへ遷移し、完了イベントをpush。</p>
+                            <p><a href="contact.html">Contact</a> / <a href="thanks.html">Thanks</a></p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>GTM Sandbox for GA4 testing</p>
+                <small>&copy; 2026 GTM Sandbox</small>
+            </div>
+        </footer>
+    </body>
+</html>
+
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GA4 Debug</title>
+    </head>
+    <body>
         <h1>GA4 Debug</h1>
         <p>Google Analytics 4のデバッグ用ページです。</p>
 

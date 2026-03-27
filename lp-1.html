@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l !== 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WM9JNK3D');
+        </script>
+        <!-- End Google Tag Manager -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LP 1 | GTM Sandbox</title>
+        <meta name="description" content="ランディングページ1。GTM計測検証用。" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=M+PLUS+1+Code:wght@500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body data-page="lp1">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WM9JNK3D" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a class="brand" href="index.html">GTM Sandbox</a>
+                <nav class="main-nav" aria-label="メインナビゲーション">
+                    <a href="index.html">Top</a>
+                    <a href="blog-1.html">Blog 1</a>
+                    <a href="blog-2.html">Blog 2</a>
+                    <a href="lp-1.html">LP 1</a>
+                    <a href="lp-2.html">LP 2</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero-inner">
+                    <p class="eyebrow">Landing Page 1</p>
+                    <h1>データに基づくWeb改善を、最短で。</h1>
+                    <p class="hero-copy">LP1はシンプル訴求型。CTAクリック計測と遷移計測を確認できます。</p>
+                    <div class="hero-cta-row">
+                        <a class="btn btn-primary js-track-cta" href="contact.html" data-cta-name="lp1_hero_contact">無料で相談する</a>
+                        <a class="btn btn-ghost js-track-cta" href="lp-2.html" data-cta-name="lp1_to_lp2">別デザインLPへ</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container grid cards-3">
+                    <article class="card">
+                        <h3>課題整理</h3>
+                        <p>現状サイトのCV導線を棚卸しし、計測可能な形に分解します。</p>
+                    </article>
+                    <article class="card">
+                        <h3>計測実装</h3>
+                        <p>GTMでイベント設計し、GA4で分析可能な状態に整えます。</p>
+                    </article>
+                    <article class="card">
+                        <h3>改善提案</h3>
+                        <p>取得データを根拠にLP改善案を継続的に実施します。</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>GTM Sandbox for GA4 testing</p>
+                <small>&copy; 2026 GTM Sandbox</small>
+            </div>
+        </footer>
+    </body>
+</html>
