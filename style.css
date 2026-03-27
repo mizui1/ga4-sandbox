@@ -23,7 +23,7 @@ body {
 }
 
 body {
-    font-family: 'Noto Sans JP', 'Noto Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    font-family: 'Noto Sans JP', 'Noto Sans';
     color: var(--ink);
     background: radial-gradient(circle at 8% 20%, rgba(193, 77, 52, 0.12), transparent 34%), radial-gradient(circle at 90% 4%, rgba(11, 110, 128, 0.14), transparent 36%), var(--bg);
     line-height: 1.7;
@@ -98,7 +98,6 @@ main {
 }
 
 .eyebrow {
-    font-family: 'M PLUS 1 Code', monospace;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
     color: var(--accent-2);
@@ -196,7 +195,6 @@ h1 {
 
 .page-kicker {
     color: var(--accent-2);
-    font-family: 'M PLUS 1 Code', monospace;
     margin: 0 0 0.5rem;
 }
 
