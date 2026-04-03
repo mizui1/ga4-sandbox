@@ -1,0 +1,76 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const btns = document.querySelectorAll('.js-diagnosis-btn');
+  const prevBtns = document.querySelectorAll('.js-diagnosis-prev');
+  const steps = document.querySelectorAll('.js-diagnosis-step');
+  const resultBlocks = document.querySelectorAll('.js-diagnosis-result-block');
+  const mainHead = document.getElementById('diagnosis-main-head');
+  const mainBody = document.getElementById('diagnosis-main-body');
+  const wrap = document.getElementById('diagnosis-area');
+
+  // 「次へ」進む処理
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const nextId = this.getAttribute('data-next');
+
+      // 次が質問（Q）の場合
+      if (nextId.startsWith('q')) {
+        steps.forEach(function(step) { step.style.display = 'none'; });
+        document.getElementById(nextId).style.display = 'block';
+      } 
+      // 次が結果（Result）の場合
+      else if (nextId.startsWith('result')) {
+        // 質問用のヘッダーとボディを隠す
+        mainHead.style.display = 'none';
+        mainBody.style.display = 'none';
+        
+        // 診断枠（グレー・白枠）のスタイルを解除し、結果ブロックのスタイルに委ねる
+        wrap.classList.add('is-result');
+
+        // 全結果ブロックを一旦隠して、該当のものだけ表示
+        resultBlocks.forEach(function(block) { block.style.display = 'none'; });
+        document.getElementById(nextId).style.display = 'block';
+      }
+    });
+  });
+
+  // 「戻る」処理
+  prevBtns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault(); // デフォルトのリンク挙動をキャンセル
+      const prevId = this.getAttribute('data-prev');
+      
+      if (prevId) {
+        // 全ての質問を隠して、指定されたIDの質問を表示
+        steps.forEach(function(step) { step.style.display = 'none'; });
+        document.getElementById(prevId).style.display = 'block';
+      }
+    });
+  });
+
+  // ▼追加：お支払方法詳細ナビゲーションの強制スクロール処理
+  const paymentNaviBtns = document.querySelectorAll('.payment-navi__btn');
+  const headerHeight = 100; // ヘッダー被りを防ぐための余白（必要に応じて数値を調整してください）
+
+  paymentNaviBtns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault(); // ブラウザのデフォルトのジャンプを無効化
+      e.stopImmediatePropagation(); // 共通JSなど、他のクリックイベントの干渉を強制的にブロック
+
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // 要素の絶対位置を取得し、ヘッダーの余白分を引いた位置を計算
+          const targetPos = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          
+          // 計算した位置へスムーススクロール
+          window.scrollTo({
+            top: targetPos,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+  
+});

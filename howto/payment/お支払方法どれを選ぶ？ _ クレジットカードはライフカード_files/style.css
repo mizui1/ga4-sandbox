@@ -1,0 +1,589 @@
+@charset "UTF-8";
+
+/* ==================================================
+   汎用カラー・テキスト
+================================================== */
+.util-color--pink {
+    color: #ff65e2;
+}
+
+.none-gap {
+    gap: 0 !important;
+}
+
+/* ==================================================
+   5秒で診断セクション
+================================================== */
+.diagnosis-wrap {
+    margin-top: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.diagnosis-head {
+    background-color: #0099ff;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 15px 10px;
+}
+
+.diagnosis-head__large {
+    font-size: 2.8rem;
+    margin: 0 4px;
+    line-height: 1;
+    vertical-align: bottom;
+}
+
+.diagnosis-body {
+    padding: 0;
+}
+
+.diagnosis-question-area {
+    background-color: #F0F0F0;
+    padding: 40px 60px 30px;
+}
+
+.diagnosis-question {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px 60px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.diagnosis-question__icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #0099ff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.diagnosis-question__text {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.diagnosis-question__img {
+    position: absolute;
+    right: -10px;
+    top: -25px;
+    width: 6.5rem;
+    height: auto;
+}
+
+.diagnosis-answers-area {
+    background-color: #fff;
+    padding: 30px 60px 40px;
+}
+
+.diagnosis-answers {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diagnosis-answers.button-wrap {
+    margin-top: 0;
+}
+
+.diagnosis-answers button.diagnosis-btn {
+    width: 100%;
+    background-color: #fff;
+    padding: 18px 10px;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+/* ▼ 追加：「前の画面に戻る」リンク */
+.diagnosis-back-wrap {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.diagnosis-back-link {
+    color: #0099ff !important;
+    font-size: 1.4rem;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.diagnosis-back-link:hover {
+    text-decoration: none !important;
+}
+
+
+/* ==================================================
+   診断結果ブロック専用スタイル
+================================================== */
+/* 診断枠が「結果」に切り替わった時に枠線や背景を消す */
+.diagnosis-wrap.is-result {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.diagnosis-result-box {
+    border: 2px solid #0099ff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.diagnosis-result-head {
+    background-color: #0099ff;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 15px 10px;
+}
+
+.diagnosis-result-body {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.diagnosis-result-title {
+    color: #0099ff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+
+/* ==================================================
+   お支払方法詳細セクション
+================================================== */
+.payment-detail-section {
+    margin-top: 60px;
+}
+
+/* 4つのナビゲーションボタン */
+.payment-navi {
+    margin-top: 30px;
+}
+
+.payment-navi__item {
+    position: relative;
+}
+
+.payment-navi__btn.button-v2__type {
+    display: flex !important;
+    flex-direction: column; /* 矢印をテキストの下に配置 */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* テキストと矢印の間隔 */
+    height: 100%;
+    padding: 15px 20px !important;
+    background-color: #fff;
+    border: 2px solid #0099ff !important;
+    border-radius: 8px !important;
+    color: #000;
+    overflow: visible !important;
+}
+
+.payment-navi__btn.button-v2__type:hover {
+    background-color: #0099ff !important;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.payment-navi__btn.button-v2__type::before,
+.payment-navi__btn.button-v2__type::after {
+    display: none !important;
+}
+
+.payment-navi__badge {
+    position: absolute;
+    top: -12px;
+    left: -2px;
+    background-color: #ff65e2;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 2px;
+    line-height: 1;
+    z-index: 2;
+}
+
+.payment-navi__icon {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #0099ff;
+    border-right: 2px solid #0099ff;
+    transform: rotate(45deg);
+    margin-top: -3px;
+    transition: all 0.3s ease;
+}
+
+.payment-navi .button-v2__type:hover .payment-navi__icon {
+    border-color: #fff;
+}
+
+/* 支払い方法詳細ブロック共通 */
+.payment-block {
+    margin-top: 50px;
+    position: relative;
+    /* ▼ 追加：ページ内リンクで飛んできた時に上部に余白を持たせる（ヘッダー被り防止） */
+    scroll-margin-top: 100px;
+}
+
+/* 上部の黄色い吹き出しラベル */
+.payment-block__label-wrap {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -7px; 
+}
+
+.payment-block__label {
+    display: inline-block;
+    background-color: #ffff54;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 8px 25px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.payment-block__label::after,
+.payment-block__label::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-color: transparent;
+}
+.payment-block__label::before {
+    border-width: 10px 8px 0 8px;
+    border-top-color: #000;
+    margin-top: 2px;
+}
+.payment-block__label::after {
+    border-width: 8px 6px 0 6px;
+    border-top-color: #ffff54;
+    margin-top: 0;
+}
+
+/* ブロック本体 */
+.payment-block__inner {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.payment-block__head {
+    background-color: #0099ff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.payment-block__title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.payment-block__body {
+    background-color: #fff;
+    padding: 40px;
+    height: calc(100% - 56px); 
+}
+
+/* 1カラム横並びレイアウト */
+.payment-block__cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.payment-block__col-img {
+    width: 48%;
+    text-align: center;
+}
+
+.payment-block__col-img-size {
+    width: 80%;
+}
+
+.payment-block__col-text {
+    width: 48%;
+}
+
+/* PC2カラムレイアウト */
+.payment-block-2col-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    align-items: stretch; 
+}
+
+.payment-block--half {
+    width: calc(50% - 15px);
+    margin-top: 0; 
+}
+
+.payment-block__body--col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 支払い例（画像＋テキスト）のデザイン */
+.payment-example-box {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto 25px;
+    width: fit-content;
+    max-width: 100%;
+}
+.payment-example-box--center {
+    justify-content: center;
+}
+.payment-example-box__icon {
+    flex-shrink: 0;
+    width: 60px;
+}
+.payment-example-box__icon img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.payment-example-box__text {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+}
+.payment-example-box--center .payment-example-box__text {
+    text-align: center;
+}
+
+.payment-block__img-center {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.payment-block__desc {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+/* こんな時こそボックス */
+.payment-case-box {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 25px;
+}
+.payment-case-box__title {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+.payment-case-box__icon {
+    width: 24px;
+    height: auto;
+    margin-right: 8px;
+}
+.payment-case-box__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.payment-case-box__list li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 8px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.payment-case-box__list li:last-child {
+    margin-bottom: 0;
+}
+.payment-case-box__list li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* ==================================================
+   SPレイアウト（767.98px以下）
+================================================== */
+@media only screen and (max-width: 767.98px) {
+    /* 5秒で診断セクション */
+    .diagnosis-wrap {
+        margin-top: 30px;
+    }
+    .diagnosis-head {
+        font-size: 1.5rem;
+        padding: 12px 10px;
+    }
+    .diagnosis-head__large {
+        font-size: 2.5rem;
+    }
+    .diagnosis-question-area {
+        padding: 40px 15px 25px;
+    }
+    .diagnosis-question {
+        padding: 20px 15px;
+        min-height: 80px;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .diagnosis-question__icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+    }
+    .diagnosis-question__text {
+        font-size: 1.6rem;
+    }
+    .diagnosis-question__img {
+        width: 4.5rem;
+        right: -10px;
+        top: -25px;
+    }
+    .diagnosis-answers-area {
+        padding: 25px 20px 30px;
+    }
+    .diagnosis-answers button.diagnosis-btn {
+        font-size: 1.4rem;
+        padding: 15px 10px;
+    }
+    
+    /* ▼ 追加：「前の画面に戻る」リンクSP用調整 */
+    .diagnosis-back-wrap {
+        margin-top: 15px;
+    }
+
+    /* 診断結果ブロック */
+    .diagnosis-result-head {
+        font-size: 1.6rem;
+        padding: 12px 10px;
+    }
+    .diagnosis-result-body {
+        padding: 25px 15px;
+    }
+    .diagnosis-result-title {
+        font-size: 2.2rem;
+        margin: 0 0 20px 0;
+    }
+
+    /* お支払方法詳細セクション */
+    .payment-detail-section {
+        margin-top: 40px;
+    }
+    .payment-navi__btn.button-v2__type {
+        padding: 12px 10px !important;
+        font-size: 1.4rem;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .payment-block {
+        margin-top: 40px;
+    }
+    .payment-block__label {
+        font-size: 1.4rem;
+        padding: 6px 15px;
+    }
+    .payment-block__title {
+        font-size: 1.8rem;
+    }
+    .payment-block__body {
+        padding: 25px 15px;
+    }
+    .payment-block__cols {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .payment-block__col-img,
+    .payment-block__col-text {
+        width: 100%;
+    }
+    
+    /* 2カラム解除 */
+    .payment-block-2col-wrap {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .payment-block--half {
+        width: 100%;
+    }
+
+    /* SPの支払い例デザイン */
+    .payment-example-box {
+        padding: 10px 15px;
+        gap: 10px;
+        width: 100%;
+        flex-direction: row;
+    }
+    .payment-example-box__icon {
+        width: 50px;
+    }
+    .payment-example-box__text {
+        font-size: 1.3rem;
+    }
+
+    .payment-case-box {
+        padding: 20px 15px;
+    }
+    .payment-case-box__title {
+        font-size: 1.6rem;
+    }
+}
+
+
+.button-v3__type.payment-btn {
+    border: 2px solid #0099ff;
+    transition: all 0.3s ease;
+}
+.button-v3__type.payment-btn:hover {
+    background-color: #fff !important;
+    color: #0099ff !important;
+}
+.button-v3__type.payment-btn:hover::before {
+    opacity: 0 !important;
+}

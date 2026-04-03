@@ -1,0 +1,38 @@
+// 見出しのサブタイトルがない場合の処理
+// spのみヘッダーダウンロードコンテンツ
+
+document.addEventListener("DOMContentLoaded", function() {
+  var headingElement = document.querySelector(".heading1__title");
+  var roundBtn = document.querySelector(".round_btn");
+  
+  if (headingElement && !headingElement.classList.contains("heading1__subtitle")) {
+    headingElement.classList.add("additional-css-class");
+  }
+  if (roundBtn) {
+    roundBtn.addEventListener("click", function() {
+      toggleClass(".sp-dl_contents", "sp-dl_close");
+      toggleClass(".Header", "sp-head_close");
+      toggleClass(".heading1__inner", "sp-head-padding_close");
+      toggleClass(".heading1__title", "sp-head-padding_close");
+      toggleClass(".header-menu-v2-wrap", "sp-padding_close");
+    });
+  }
+});
+
+
+
+function toggleClass(selector, className) {
+  var elements = document.querySelectorAll(selector);
+  elements.forEach(function(element) {
+    element.classList.toggle(className);
+  });
+}
+
+// 8/1追記分（ヘッダー挙動修正のため）
+(() => {
+  const btn = document.querySelector(".js-header-menu-btn");
+  btn.addEventListener("click", () => {
+      const body = document.querySelector("body");
+      body.style.overflow = btn.classList.contains("is-open") ? "" : "hidden";
+  });
+})();
