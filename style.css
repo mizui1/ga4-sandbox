@@ -21,6 +21,10 @@ header {
 footer {
     background: #fff;
     border-top: 1px solid #ddd;
+    padding: 1.5rem 0.5rem;
+    color: #555;
+    text-align: center;
+    font-size: 0.95em;
 }
 
 nav a {
@@ -45,6 +49,83 @@ main {
 
 section {
     margin-bottom: 2rem;
+}
+
+.promo-banner-section {
+    margin-bottom: 2.5rem;
+}
+
+.promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid #d8cdbb;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fff8eb 0%, #f6dfc8 52%, #efc8aa 100%);
+    color: #222;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(109, 68, 29, 0.12);
+}
+
+.promo-banner-copy {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.promo-banner-copy strong {
+    font-size: 1.25rem;
+}
+
+.promo-banner-copy p {
+    margin: 0;
+    color: #5e4631;
+}
+
+.promo-banner-label {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(97, 54, 22, 0.12);
+    color: #7a3f17;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.promo-banner-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    background: #8f3f1e;
+    color: #fff;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.promo-banner:hover {
+    background: linear-gradient(135deg, #fff4df 0%, #f3d2b1 52%, #eab690 100%);
+}
+
+.promo-banner:hover .promo-banner-action {
+    background: #7b3417;
+}
+
+@media (max-width: 640px) {
+    .promo-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+
+    .promo-banner-action {
+        width: 100%;
+    }
 }
 
 input,
@@ -74,13 +155,4 @@ button:hover,
 
 ul {
     padding-left: 1.2em;
-}
-
-footer {
-    background: #fff;
-    border-top: 1px solid #ddd;
-    padding: 1.5rem 0.5rem;
-    color: #555;
-    text-align: center;
-    font-size: 0.95em;
 }
